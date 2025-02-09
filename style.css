@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background-image: url('bgi.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #000000;
+ /* background-color: #413f47;;  Light beige */
+  cursor: none; /* Hide the default cursor */
+  font-family: Arial, sans-serif;
+}
+
+
+/* Cat paw (smaller now) */
+#paw {
+  position: absolute;
+  width: 50px;  /* reduced from 80px */
+  height: 50px; /* reduced from 80px */
+  pointer-events: none;
+  z-index: 1000; /* Ensure it stays above the mouse */
+}
+/* Mouse image (bigger now) */
+#mouse {
+  position: absolute;
+  width: 75px;  /* increased from 60px */
+  height: 100px; /* increased from 60px */
+  z-index: 1;
+}
+#slingshot {
+  position: absolute;
+  top: 60%;
+  left: 51.6%;
+  transform: translate(-50%, -50%);
+  width: 100px; /* Adjust the size as needed */
+}
+#mouse.dead {
+  width: 300px;  /* Adjust size as needed */
+  height: 400px; /* Adjust size as needed */
+  z-index: 1100; /* Ensure it stays above the paw */
+}
+/* Score display styling */
+#score {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 8px;
+  background-color: #00000091;
+}
+
+/* Target display styling */
+#target {
+  position: fixed;
+  top: 0px;
+  left: 91px; /* Positioned beside the score */
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #00000091;
+  color: #ffffff;
+  z-index: 1100;
+}
+/* Victory message styling */
+#victory {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+ 
+  border-radius: 16px;
+  color: rgb(0, 0, 0);
+  background: rgba(51, 51, 51, 0.41);
+  padding: 20px;
+  border: 4px solid rgb(0, 0, 0);
+  z-index: 1100;
+}
+
+#maker-btn {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  background-color: #00000093; /* Facebook Blue */
+  color: rgb(163, 163, 163);
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#maker-btn:hover {
+  background-color: #145dbf; /* Darker blue on hover */
+}
