@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat vs Mouse Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- The cat's paw (follows your cursor) -->
+  <img id="paw" src="s.png" alt="Cat Paw" />
+  <audio id="bgm" src="bgm.mp3" loop></audio>
+  <!-- The moving mouse -->
+  <img id="mouse" src="c1.png" alt="Mouse" />
+  <img id="slingshot" src="Y.png" alt="Slingshot">
+  <!--img id="bgi" src="bgi.jpeg" alt="bgi"-->
+  <audio id="damageSound" src="a.mp3"></audio>
+  <audio id="bgmt" src="bgmt.mp3"></audio>
+  <audio id="one" src="one.mp3"></audio>
+
+  <!-- Score display -->
+  <div id="score">Score: 0 </div>
+
+  <!-- Target display -->
+  <div id="target">Target: 10</div>
+
+  <!-- Victory message (hidden until game over) -->
+  <div id="victory" style="display: none;">You Win!</div>
+  <a id="maker-btn" href="https://www.facebook.com/profile.php?id=100094312062862" target="_blank">Visit Creator</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
