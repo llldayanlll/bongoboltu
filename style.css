@@ -51,7 +51,17 @@ body {
   padding: 10px 8px;
   background-color: #00000091;
 }
-
+#visitor-counter {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  font-size: 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 8px;
+  background-color: #00000091;
+}
 /* Target display styling */
 #target {
   position: fixed;
