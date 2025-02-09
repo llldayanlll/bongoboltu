@@ -53,7 +53,7 @@ body {
 }
 #visitor-counter {
   position: fixed;
-  top: 0px;
+  top: 1000px;
   right: 0px;
   font-size: 20px;
   color: #ffffff;
