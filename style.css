@@ -55,8 +55,8 @@ body {
 /* Target display styling */
 #target {
   position: fixed;
-  top: 50%px;
-  left: 50%px; /* Positioned beside the score */
+  top: 0px;
+  left: 91px; /* Positioned beside the score */
   font-size: 20px;
   border: none;
   border-radius: 5px;
