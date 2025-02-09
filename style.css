@@ -51,9 +51,9 @@ body {
   padding: 10px 8px;
   background-color: #00000091;
 }
-#visitor-counter {
+#hit {
   position: fixed;
-  top: 1000px;
+  top: 0px;
   right: 0px;
   font-size: 20px;
   color: #ffffff;
@@ -65,9 +65,9 @@ body {
 /* Target display styling */
 #target {
   position: fixed;
-  top: 0px;
-  left: 91px; /* Positioned beside the score */
-  font-size: 20px;
+  top: 50%px;
+  left: 50%px; /* Positioned beside the score */
+  font-size: 10px;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
