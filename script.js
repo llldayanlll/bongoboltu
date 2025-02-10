@@ -1,1 +1,112 @@
-const _0x5f4855=_0x108d;(function(_0x5e9906,_0x355262){const _0x2b8918=_0x108d,_0xf9032d=_0x5e9906();while(!![]){try{const _0x4ccc64=-parseInt(_0x2b8918(0xc1))/0x1*(parseInt(_0x2b8918(0xc7))/0x2)+parseInt(_0x2b8918(0xb9))/0x3+-parseInt(_0x2b8918(0xc0))/0x4*(parseInt(_0x2b8918(0xcd))/0x5)+parseInt(_0x2b8918(0xaf))/0x6+parseInt(_0x2b8918(0xa1))/0x7+-parseInt(_0x2b8918(0xbd))/0x8*(-parseInt(_0x2b8918(0xc8))/0x9)+parseInt(_0x2b8918(0xcc))/0xa;if(_0x4ccc64===_0x355262)break;else _0xf9032d['push'](_0xf9032d['shift']());}catch(_0x444eec){_0xf9032d['push'](_0xf9032d['shift']());}}}(_0x3fd6,0x4e77b));const paw=document[_0x5f4855(0xad)](_0x5f4855(0xa6)),mouse=document[_0x5f4855(0xad)]('mouse'),scoreDisplay=document[_0x5f4855(0xad)]('score'),victoryPopup=document[_0x5f4855(0xad)](_0x5f4855(0xbc));let score=0x0,gameOver=![],isDamaged=![],moveInterval,pawMoveInterval,canscore=!![],followCursor=![],clickCount=0x0;function _0x3fd6(){const _0x39b6d5=['Autoplay\x20blocked:','getElementById','classList','3036762CEsQwG','log','pause','bottom','catch','./dead.png','bgmt','click','score:\x20','right','227466OjjaEN','block','add','victory','86776WhcrKi','innerWidth','./damage.png','479408uaRbkf','23oMhDlS','clientY','play','./c1.png','mousemove','left','3478HCEfwq','18rEBlqc','innerHeight','addEventListener','visibilitychange','192210YOLBdN','20OTXsFC','clientX','style','getBoundingClientRect','1525608kYMbAW','bgm','src','one','removeEventListener','paw','top','random','dead','display','duration'];_0x3fd6=function(){return _0x39b6d5;};return _0x3fd6();}const centerX=window[_0x5f4855(0xbe)]/0x2,centerY=window[_0x5f4855(0xc9)]/0x2,pawSpeed=0x3;let pawX=centerX,pawY=centerY,mouseX=Math[_0x5f4855(0xa8)]()*(window[_0x5f4855(0xbe)]-0x64),mouseY=Math[_0x5f4855(0xa8)]()*(window[_0x5f4855(0xc9)]-0x64),speedX=0x3,speedY=0x2,pawDirectionX=0x0,pawDirectionY=0x0,pawMoving=![];function _0x108d(_0x1b9dbc,_0x462a74){const _0x3fd65d=_0x3fd6();return _0x108d=function(_0x108de1,_0x4621c9){_0x108de1=_0x108de1-0x9f;let _0xe4de63=_0x3fd65d[_0x108de1];return _0xe4de63;},_0x108d(_0x1b9dbc,_0x462a74);}paw['style'][_0x5f4855(0xc6)]=pawX+'px',paw['style'][_0x5f4855(0xa7)]=pawY+'px';function moveMouse(){const _0x1ab130=_0x5f4855;if(gameOver||isDamaged)return;mouseX+=speedX,mouseY+=speedY;if(mouseX<=0x0||mouseX>=window[_0x1ab130(0xbe)]-0x64)speedX*=-0x1;if(mouseY<=0x0||mouseY>=window[_0x1ab130(0xc9)]-0x64)speedY*=-0x1;mouse[_0x1ab130(0x9f)][_0x1ab130(0xc6)]=mouseX+'px',mouse[_0x1ab130(0x9f)][_0x1ab130(0xa7)]=mouseY+'px';}function movePaw(){const _0x19293e=_0x5f4855;if(!pawMoving||gameOver)return;pawX+=pawDirectionX*pawSpeed,pawY+=pawDirectionY*pawSpeed;if(pawX<0x0||pawX>window[_0x19293e(0xbe)]-0x32||pawY<0x0||pawY>window['innerHeight']-0x32){respawnPaw();return;}paw[_0x19293e(0x9f)]['left']=pawX+'px',paw[_0x19293e(0x9f)]['top']=pawY+'px',checkCollision();}function respawnPaw(){const _0x2826dc=_0x5f4855;pawMoving=![],paw[_0x2826dc(0x9f)]['display']='none',setTimeout(()=>{const _0x7459f4=_0x2826dc;pawX=centerX,pawY=centerY,paw[_0x7459f4(0x9f)][_0x7459f4(0xc6)]=pawX+'px',paw[_0x7459f4(0x9f)][_0x7459f4(0xa7)]=pawY+'px',paw[_0x7459f4(0x9f)]['display']='block',clickCount=0x0,followCursor=![];},0x12c);}function checkCollision(){const _0x3a63ba=_0x5f4855,_0x264c11=paw[_0x3a63ba(0xa0)](),_0x3183b3=mouse[_0x3a63ba(0xa0)](),_0x37b7b1=document[_0x3a63ba(0xad)]('damageSound');if(_0x264c11[_0x3a63ba(0xc6)]<_0x3183b3[_0x3a63ba(0xb8)]&&_0x264c11['right']>_0x3183b3[_0x3a63ba(0xc6)]&&_0x264c11[_0x3a63ba(0xa7)]<_0x3183b3[_0x3a63ba(0xb2)]&&_0x264c11[_0x3a63ba(0xb2)]>_0x3183b3[_0x3a63ba(0xa7)]){if(!canscore)return;score++,scoreDisplay['innerText']=_0x3a63ba(0xb7)+score,canscore=![],isDamaged=!![],mouse['src']=_0x3a63ba(0xbf),setTimeout(()=>{},_0x37b7b1[_0x3a63ba(0xab)]*0x3e8),score>=0x6?(gameOver=!![],clearInterval(moveInterval),clearInterval(pawMoveInterval),mouse[_0x3a63ba(0xa3)]=_0x3a63ba(0xb4),mouse[_0x3a63ba(0xae)][_0x3a63ba(0xbb)](_0x3a63ba(0xa9)),_0x37b7b1[_0x3a63ba(0xb1)](),bgm['pause'](),bgmt[_0x3a63ba(0xc3)](),setTimeout(()=>{const _0x5e0f65=_0x3a63ba;victoryPopup[_0x5e0f65(0x9f)][_0x5e0f65(0xaa)]=_0x5e0f65(0xba);},0x1f4)):(clearInterval(moveInterval),_0x37b7b1[_0x3a63ba(0xc3)](),setTimeout(()=>{const _0x52c70e=_0x3a63ba;mouse[_0x52c70e(0xa3)]=_0x52c70e(0xc4),isDamaged=![],canscore=!![],moveInterval=setInterval(moveMouse,0x14);},0x960));}}function followCursorMovement(_0x1ece9e){const _0x55894d=_0x5f4855;if(!followCursor)return;pawX+=(_0x1ece9e[_0x55894d(0xce)]-pawX)*0.2,pawY+=(_0x1ece9e[_0x55894d(0xc2)]-pawY)*0.2,paw['style'][_0x55894d(0xc6)]=pawX+'px',paw['style'][_0x55894d(0xa7)]=pawY+'px';}document[_0x5f4855(0xca)](_0x5f4855(0xb6),_0x3eab8b=>{const _0x150212=_0x5f4855;if(gameOver||isDamaged)return;clickCount++;if(clickCount===0x1)followCursor=!![],document['addEventListener'](_0x150212(0xc5),followCursorMovement);else{if(clickCount===0x2){followCursor=![],document['removeEventListener'](_0x150212(0xc5),followCursorMovement);const _0xb3985=_0x3eab8b[_0x150212(0xce)],_0x4859e6=_0x3eab8b['clientY'];pawDirectionX=-(_0xb3985-centerX)/0xa,pawDirectionY=-(_0x4859e6-centerY)/0xa,pawMoving=!![];}}}),moveInterval=setInterval(moveMouse,0x14),pawMoveInterval=setInterval(movePaw,0x14);let bgmt=document[_0x5f4855(0xad)](_0x5f4855(0xb5)),bgm=document[_0x5f4855(0xad)]('bgm'),one=document[_0x5f4855(0xad)](_0x5f4855(0xa4));document[_0x5f4855(0xca)](_0x5f4855(0xb6),function startBGM(){const _0x4852e1=_0x5f4855,_0x4b414b=document[_0x4852e1(0xad)](_0x4852e1(0xa2));_0x4b414b[_0x4852e1(0xc3)]()[_0x4852e1(0xb3)](_0x26b6e4=>console[_0x4852e1(0xb0)](_0x4852e1(0xac),_0x26b6e4)),document[_0x4852e1(0xa5)]('click',startBGM);}),document['addEventListener'](_0x5f4855(0xcb),function(){const _0x4362f0=_0x5f4855,_0x403d8a=document[_0x4362f0(0xad)](_0x4362f0(0xa2));document['hidden']?_0x403d8a['pause']():_0x403d8a[_0x4362f0(0xc3)]()[_0x4362f0(0xb3)](_0x4ea33e=>console[_0x4362f0(0xb0)](_0x4362f0(0xac),_0x4ea33e));});
+const paw = document.getElementById("paw"), mouse = document.getElementById("mouse"), scoreDisplay = document.getElementById("score"), victoryPopup = document.getElementById("victory");
+
+let score = 0, gameOver = false, isDamaged = false, moveInterval, pawMoveInterval, canscore = true, followCursor = false, clickCount = 0;
+const centerX = window.innerWidth / 2, centerY = window.innerHeight / 2, pawSpeed = 3;
+let pawX = centerX, pawY = centerY, mouseX = Math.random() * (window.innerWidth - 100), mouseY = Math.random() * (window.innerHeight - 100), speedX = 3, speedY = 2, pawDirectionX = 0, pawDirectionY = 0, pawMoving = false;
+
+paw.style.left = `${pawX}px`; paw.style.top = `${pawY}px`;
+
+function moveMouse() {
+	if (gameOver || isDamaged) return;
+	mouseX += speedX; mouseY += speedY;
+	if (mouseX <= 0 || mouseX >= window.innerWidth - 100) speedX *= -1;
+	if (mouseY <= 0 || mouseY >= window.innerHeight - 100) speedY *= -1;
+	mouse.style.left = `${mouseX}px`; mouse.style.top = `${mouseY}px`;
+}
+
+function movePaw() {
+	if (!pawMoving || gameOver) return;
+	pawX += pawDirectionX * pawSpeed; pawY += pawDirectionY * pawSpeed;
+	if (pawX < 0 || pawX > window.innerWidth - 50 || pawY < 0 || pawY > window.innerHeight - 50) { respawnPaw(); return; }
+	paw.style.left = `${pawX}px`; paw.style.top = `${pawY}px`;
+	checkCollision();
+}
+
+function respawnPaw() {
+	pawMoving = false; paw.style.display = "none";
+	setTimeout(() => { pawX = centerX; pawY = centerY; paw.style.left = `${pawX}px`; paw.style.top = `${pawY}px`; paw.style.display = "block"; clickCount = 0; followCursor = false; }, 300);
+}
+
+function checkCollision() {
+	const pawRect = paw.getBoundingClientRect(), mouseRect = mouse.getBoundingClientRect();
+	const damageSound = document.getElementById("damageSound");
+
+	if (pawRect.left < mouseRect.right && pawRect.right > mouseRect.left && pawRect.top < mouseRect.bottom && pawRect.bottom > mouseRect.top) {
+		if (!canscore) return;
+		score++; scoreDisplay.innerText ="score: "+ score; canscore = false; isDamaged = true; mouse.src = "./damage.png"; //bgm.pause();
+		//damageSound.play(); 
+		
+		// Play one.mp3 after half a second once damageSound is done
+		setTimeout(() => {
+			//oneSound.play();  // Play the "one.mp3"
+		}, damageSound.duration * 1000);  // Wait until damageSound is done playing (in seconds)
+
+		if (score >= 6) {
+			gameOver = true; clearInterval(moveInterval); clearInterval(pawMoveInterval);
+			mouse.src = "./dead.png";  mouse.classList.add("dead"); 
+			damageSound.pause();
+			bgm.pause();
+			bgmt.play();
+			
+			setTimeout(() => { victoryPopup.style.display = "block"; }, 500);
+		} else {
+			clearInterval(moveInterval);
+			damageSound.play(); 
+			setTimeout(() => { mouse.src = "./c1.png"; isDamaged = false; canscore = true; moveInterval = setInterval(moveMouse, 20); }, 2400);
+		}
+	}
+}
+
+
+
+
+
+function followCursorMovement(event) {
+	if (!followCursor) return;
+	pawX += (event.clientX - pawX) * 0.2;
+	pawY += (event.clientY - pawY) * 0.2;
+	paw.style.left = `${pawX}px`; paw.style.top = `${pawY}px`;
+}
+
+document.addEventListener("click", (event) => {
+	if (gameOver || isDamaged) return;
+	clickCount++;
+	if (clickCount === 0) {
+		followCursor = true; document.addEventListener("mousemove", followCursorMovement);
+	} else if (clickCount === 1) {
+		followCursor = false; document.removeEventListener("mousemove", followCursorMovement);
+		const cursorX = event.clientX, cursorY = event.clientY;
+		pawDirectionX = -(cursorX - centerX) / 10;
+		pawDirectionY = -(cursorY - centerY) / 10;
+		pawMoving = true;
+	}
+});
+
+moveInterval = setInterval(moveMouse, 20);
+pawMoveInterval = setInterval(movePaw, 20);
+
+
+   
+let bgmt = document.getElementById("bgmt");
+let bgm = document.getElementById("bgm");
+let one = document.getElementById("one");
+
+
+
+
+document.addEventListener("click", function startBGM() {
+    const bgm = document.getElementById("bgm");
+    bgm.play().catch(error => console.log("Autoplay blocked:", error));
+    
+    // Remove event listener after first interaction
+    document.removeEventListener("click", startBGM);
+});
+
+document.addEventListener("visibilitychange", function() {
+    const bgm = document.getElementById("bgm");
+    if (document.hidden) {
+        bgm.pause(); // Pause the music when the tab is inactive
+    } else {
+        bgm.play().catch(error => console.log("Autoplay blocked:", error)); // Resume when active
+    }
+});
